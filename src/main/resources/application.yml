@@ -1,0 +1,10 @@
+server:
+  port : 9099
+  servlet:
+    context-path: /rockwell/api/v1
+    
+task:
+  default:
+   url: http://www.google.com
+  scheduler:
+    cron: 5000
