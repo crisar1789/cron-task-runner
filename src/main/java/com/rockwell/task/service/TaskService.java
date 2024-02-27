@@ -5,6 +5,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.google.common.base.Strings;
 import com.rockwell.task.object.TaskResponse;
 
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +18,9 @@ public class TaskService {
 	private String url;
 	
 	public TaskResponse getInfo(String url) {
-		this.url = url;
+		if(!Strings.isNullOrEmpty(url)) {
+			this.url = url;
+		}
 		return executetask();
 		
 	}
